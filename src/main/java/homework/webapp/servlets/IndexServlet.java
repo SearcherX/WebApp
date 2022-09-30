@@ -1,4 +1,4 @@
-package homework.webapp;
+package homework.webapp.servlets;
 
 import homework.webapp.beans.History;
 import homework.webapp.beans.Manufacturer;
@@ -17,13 +17,18 @@ import java.util.Random;
 public class IndexServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //получить список производителей
         Manufacturer[] manufacturers = ManufacturerControl.getAllManufacturers();
+        //выбрать случайного производитея
         Random random = new Random();
         assert manufacturers != null;
         Manufacturer manufacturer = manufacturers[random.nextInt(manufacturers.length)];
 
+        //получить Id выбраного производителя
         int manufacturerId = manufacturer.getId();
+        //получить историю производителя
         History[] histories = HistoryControl.getHistory(manufacturerId);
+        //получить список заголовков новостей производителя
         NewsHeader[] newsHeaders = NewsHeaderControl.getNewsHeaderByManufacturerId(manufacturerId);
 
         request.setAttribute("manufacturer", manufacturer);

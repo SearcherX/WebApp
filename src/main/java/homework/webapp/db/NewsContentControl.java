@@ -19,6 +19,7 @@ public class NewsContentControl {
             String queryString = "SELECT * FROM NewsContent AS H WHERE H.NewsHeaderId =?";
             PreparedStatement preparedStatement = connection.prepareStatement(queryString);
             preparedStatement.setInt(1, selectId);
+            // 2. получить таблицу результатов
             ResultSet queryResult = preparedStatement.executeQuery();
 
             // 3. Перебор результатов

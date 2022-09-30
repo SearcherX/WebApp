@@ -42,14 +42,17 @@ public class NewsHeaderControl {
             String queryString = "SELECT * FROM NewsHeader WHERE Id =?";
             PreparedStatement preparedStatement = connection.prepareStatement(queryString);
             preparedStatement.setInt(1, selectId);
+            // 2. получить единственную запись
             ResultSet queryResult = preparedStatement.executeQuery();
 
+            // 3. отправить инфу в bean
             if (queryResult.next()) {
                 int id = queryResult.getInt(1);
                 String content = queryResult.getString(2);
                 String type = queryResult.getString(3);
                 int manufacturerId = queryResult.getInt(4);
 
+                // 4. вернуть результат в виде bean
                 return new NewsHeader(id, content, type, manufacturerId);
             }
         } catch (SQLException ignored) {
