@@ -5,3 +5,7 @@ body {
 img.logo {
     max-height: 2em;
 }
+
+a>div>p {
+    cursor: inherit;
+}
