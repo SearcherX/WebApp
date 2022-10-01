@@ -9,20 +9,8 @@
 <html>
 <head>
     <title>Footer</title>
-    <style>
-        .footer {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: gray;
-            font-size: 10pt;
-            position: absolute;
-            height: 5vh;
-            width: 100%;
-        }
-    </style>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
 <div class = "footer">

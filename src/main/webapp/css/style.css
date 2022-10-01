@@ -13,3 +13,19 @@ img.logo {
 a>div>p {
     cursor: inherit;
 }
+
+.footer {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+    position: absolute;
+    height: 5vh;
+    width: 100%;
+}
+
+.footer>h4 {
+    font-size: 14pt;
+}
